@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c6bed89-a12e-425d-b92a-654820fafc0c" name="Default" comment="" />
+    <list default="true" id="9c6bed89-a12e-425d-b92a-654820fafc0c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BSComponents4Twig.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/composerJson.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copyright/PHP.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/shawe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vagrant.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs.min.css" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +43,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="es_ES.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="es_ES.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Translation/es_ES.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="facturascripts.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/facturascripts.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="25" selection-start-column="8" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -70,6 +106,9 @@
       <dir>$PROJECT_DIR$/View/Components/BS3</dir>
     </dirStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -86,6 +125,7 @@
         <option value="$PROJECT_DIR$/View/Components/BS4/fontawesome.html.twig" />
         <option value="$PROJECT_DIR$/Translation/en_EN.json" />
         <option value="$PROJECT_DIR$/Translation/es_ES.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -122,6 +162,7 @@
     <option name="width" value="960" />
     <option name="height" value="1048" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -134,11 +175,6 @@
             <path>
               <item name="BSComponents4Twig" type="b2602c69:ProjectViewProjectNode" />
               <item name="BSComponents4Twig" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BSComponents4Twig" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BSComponents4Twig" type="462c0819:PsiDirectoryNode" />
-              <item name="Translation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,12 +232,12 @@
       <option name="presentableId" value="Default" />
       <updated>1530120678299</updated>
       <workItem from="1530120680488" duration="1693000" />
-      <workItem from="1530122393764" duration="9799000" />
+      <workItem from="1530122393764" duration="10045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11492000" />
+    <option name="totallyTimeSpent" value="11738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1048" extended-state="4" />
@@ -212,8 +248,8 @@
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="File Transfer" order="11" sideWeight="0.49342105" weight="0.2713797" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32928178" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" sideWeight="0.40460527" weight="0.47403315" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.48450854" weight="0.27734807" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.40460527" weight="0.47403315" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.48450854" visible="true" weight="0.27708095" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29166666" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32894737" />
@@ -257,13 +293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/facturascripts.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -326,6 +355,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/facturascripts.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
