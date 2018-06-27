@@ -1,0 +1,23 @@
+{#
+/**
+* @file well.html.twig
+*
+* Default theme implementation to display a Bootstrap Well component.
+*
+* @var id:          Your id
+* @var name:        Your name
+* @var class:       well-lg, well-sm
+* @var message:     Your text message
+*
+* How to use it:
+*
+* {% include "Components/BS4/well.html.twig" with {id:'myWellId', name:'myWellName', class: 'well-lg', message: '<strong>Hello World</strong> Testing templating BS components with Twig!'} %}
+*/
+#}
+
+<div{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
+        class="well{% if class is defined %} {{ class }}{% endif %}">
+    {% if message is defined %}
+        {{ message | raw }}
+    {% endif %}
+</div>

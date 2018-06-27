@@ -1,0 +1,170 @@
+{% extends 'Master/MenuTemplate.html.twig' %}
+
+{% block css %}
+    {{ parent() }}
+    <link href="https://getbootstrap.com/docs/4.0/assets/css/docs.min.css" rel="stylesheet"/>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/docs.min.js"></script>
+{% endblock %}
+{% block body %}
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-12'>
+                <h1>Default index for Twig BS3 components sample</h1>
+                <p>If your base template is based on another Bootstrap version this can be rendered as broken</p>
+
+                <h2>Used for test Twig templates from BootStrap components:</h2>
+
+                <h3>Alert demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/alert.html.twig', params: {id:'myAlertId1', name:'myAlertName1', class: 'alert-success', dismissible: true, message: '<strong>Hello World</strong> Testing templating BS components with Twig!'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/alert.html.twig', params: {id:'myAlertId2', name:'myAlertName2', class: 'alert-info', dismissible: true, message: '<strong>Hello World</strong> Testing templating BS components with Twig!'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/alert.html.twig', params: {id:'myAlertId3', name:'myAlertName3', class: 'alert-danger', dismissible: false, message: '<strong>Hello World</strong> Testing templating BS components with Twig!'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/alert.html.twig', params: {id:'myAlertId4', name:'myAlertName4', class: 'alert-warning', dismissible: false, message: '<strong>Hello World</strong> Testing templating BS components with Twig!'}} %}
+
+                <h3>Badge demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/badge.html.twig', params: {id:'myBadgeId1', name:'myBadgeName', badge: '3'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/badge.html.twig', params: {id:'myBadgeId2', name:'myBadgeName', badge: '10'}} %}
+
+                <h3>Breadcrumb demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/breadcrumb.html.twig', params: {id:'myBreadcrumbId1', name:'myBreadcrumbName1', texts: ['Home', 'Library', 'Data'], links: ['#', '#', null], classes: [null, null, 'active']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/breadcrumb.html.twig', params: {id:'myBreadcrumbId2', name:'myBreadcrumbName2', texts: ['Home', 'Data'], links: ['#', null], classes: [null, 'active']}} %}
+
+                <h3>Button demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button.html.twig', params: {id:'myButtonId1', name:'myButtonName1', class: 'btn-default', text: 'Button1', style: 'link', type: null, link: '#button'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button.html.twig', params: {id:'myButtonId2', name:'myButtonName2', class: 'btn-default', text: 'Button2', style: 'button', type: 'button', link: null}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button.html.twig', params: {id:'myButtonId3', name:'myButtonName3', class: 'btn-default', text: 'Button3', style: 'input', type: 'submit', link: null}} %}
+
+
+                <h3>Button Group demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button-group.html.twig', params: {ids: ['buttonIdLeft1','buttonIdMiddle1','buttonIdRight1'], names: ['buttonNameLeft','buttonNameMiddle','buttonNameRight'], texts: ['Left1','Middle1','Right1'], classes: ['btn-default','btn-default','btn-default']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button-group.html.twig', params: {class: 'btn-group-lg', ids: ['buttonIdLeft2','buttonIdMiddle2','buttonIdRight2'], names: ['buttonNameLeft','buttonNameMiddle','buttonNameRight'], texts: ['Left2','Middle2','Right2'], classes: ['btn-default','btn-default','btn-default']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button-group.html.twig', params: {class: 'btn-group-vertical', ids: ['buttonIdLeft3','buttonIdMiddle3','buttonIdRight3'], names: ['buttonNameLeft','buttonNameMiddle','buttonNameRight'], texts: ['Left3','Middle3','Right3'], classes: ['btn-default','btn-default','btn-default']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button-group.html.twig', params: {class: 'btn-group-justified', ids: ['buttonIdLeft4','buttonIdMiddle4','buttonIdRight4'], names: ['buttonNameLeft','buttonNameMiddle','buttonNameRight'], texts: ['Left4','Middle4','Right4'], classes: ['btn-default','btn-default','btn-default']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button-group.html.twig', params: {class: 'btn-group-lg btn-group-justified', ids: ['buttonIdLeft5','buttonIdMiddle5','buttonIdRight5'], names: ['buttonNameLeft','buttonNameMiddle','buttonNameRight'], texts: ['Left5','Middle5','Right5'], classes: ['btn-default','btn-default','btn-default']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button-group.html.twig', params: {class: 'btn-group-vertical btn-group-justified', ids: ['buttonIdLeft6','buttonIdMiddle6','buttonIdRight6'], names: ['buttonNameLeft','buttonNameMiddle','buttonNameRight'], texts: ['Left6','Middle6','Right6'], classes: ['btn-default','btn-default','btn-default']}} %}
+
+                <h3>Button Toolbar demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/button-toolbar.html.twig', params: {ids: ['buttonIdLeft','buttonIdMiddle','buttonIdRight'], names: ['buttonNameLeft','buttonNameMiddle','buttonNameRight'], texts: ['Left','Middle','Right'], classes: ['btn-default','btn-default','btn-default']}} %}
+
+                <h3>Checkbox demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/checkbox.html.twig', params: {id:'myCheckboxId1', name:'myCheckboxName1', text: 'Esto es un placeholder', type: 'input'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/checkbox.html.twig', params: {id:'myCheckboxId2', name:'myCheckboxName2', text: 'Recuerdame', type: 'label'}} %}
+
+                <h3>Dropdown demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/dropdown.html.twig', params: { id:'myDropdownMenuId', name:'myDropdownMenuName', class: 'btn-default', type: 'dropdown', text: 'Dropdown button', alignement: 'dropdown-menu-right', texts: ['Dropdown header', 'Action1', 'Another action', 'Something else here', null, 'Dropdown header', 'Separated link'], links: [null, '#action1', '#another_action', '#something_else_here', null, null, '#separated_link'], classes: ['dropdown-header', null, null, null, 'divider', 'dropdown-header', null]}} %}
+
+                <h3>Glyphicon demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/glyphicon.html.twig', params: {id:'myGlyphiconId1', name:'myGlyphiconName1', class: 'glyphicon-asterisk'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/glyphicon.html.twig', params: {id:'myGlyphiconId2', name:'myGlyphiconName2', class: 'glyphicon-plus'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/glyphicon.html.twig', params: {id:'myGlyphiconId3', name:'myGlyphiconName3', class: 'glyphicon-euro'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/glyphicon.html.twig', params: {id:'myGlyphiconId4', name:'myGlyphiconName4', class: 'glyphicon-minus'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/glyphicon.html.twig', params: {id:'myGlyphiconId5', name:'myGlyphiconName5', class: 'glyphicon-cloud'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/glyphicon.html.twig', params: {id:'myGlyphiconId6', name:'myGlyphiconName6', class: 'glyphicon-envelope'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/glyphicon.html.twig', params: {id:'myGlyphiconId7', name:'myGlyphiconName7', class: 'glyphicon-pencil'}} %}
+
+                <h3>Input Button demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/input-button.html.twig', params: {id:'myInputButtonId1', name:'myInputButtonName1', class: '', position: 'left', texts: ['Text1', 'Text2']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/input-button.html.twig', params: {id:'myInputButtonId2', name:'myInputButtonName2', class: '', position: 'right', texts: ['Text1', 'Text2']}} %}
+
+                <h3>Input Group demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/input-group.html.twig', params: {id:'myInputGroupId1', name:'myInputGroupName1', class: '', position: 'left', texts: ['Text1', 'Text2']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/input-group.html.twig', params: {id:'myInputGroupId2', name:'myInputGroupName2', class: '', position: 'right', texts: ['Text1', 'Text2']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/input-group.html.twig', params: {id:'myInputGroupId3', name:'myInputGroupName3', class: '', position: 'both', texts: ['Text1', 'Text2', 'Text3']}} %}
+
+                <h3>Jumbotron demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/jumbotron.html.twig', params: {id: 'myJumbotronId1', name: 'myJumbotronName1', type: 'container', text: '<h1>Hello, world!</h1><p>...</p><p><a class=\'btn btn-primary btn-lg\' href=\'#\' role=\'button\'>Learn more</a></p>'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/jumbotron.html.twig', params: {id: 'myJumbotronId2', name: 'myJumbotronName2', type: null, text: '<h1>Hello, world!</h1><p>...</p><p><a class=\'btn btn-info btn-lg\' href=\'#\' role=\'button\'>Learn more</a></p>'}} %}
+
+                <h3>Label demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/label.html.twig', params: {id:'myLabelId1', name:'myLabelName1', class: 'label-default', text: 'My text label default'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/label.html.twig', params: {id:'myLabelId2', name:'myLabelName2', class: 'label-primary', text: 'My text label primary'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/label.html.twig', params: {id:'myLabelId3', name:'myLabelName3', class: 'label-info', text: 'My text label info'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/label.html.twig', params: {id:'myLabelId4', name:'myLabelName4', class: 'label-success', text: 'My text label success'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/label.html.twig', params: {id:'myLabelId5', name:'myLabelName5', class: 'label-danger', text: 'My text label danger'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/label.html.twig', params: {id:'myLabelId6', name:'myLabelName6', class: 'label-warning', text: 'My text label warning'}} %}
+
+                <h3>List Group demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/list-group.html.twig', params: {id:'myListGroupId', name:'myListGroupName', texts: ['Home', 'Library', 'Data'], links: ['','',''], classes: ['', 'list-group-item-success', 'list-group-item-info'], type: 'list'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/list-group.html.twig', params: {id:'myListGroupId', name:'myListGroupName', texts: ['Home', 'Library', 'Data'], links: ['#action1', '#action2', '#action3'], classes: ['', 'list-group-item-success', 'list-group-item-info'], type: 'link'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/list-group.html.twig', params: {id:'myListGroupId', name:'myListGroupName', texts: ['Home', 'Library', 'Data'], links: ['','',''], classes: ['', 'list-group-item-success', 'list-group-item-info'], type: 'button'}} %}
+
+                <h3>Media Object demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/list-group.html.twig', params: {id:'myMediaObjectId', name:'myMediaObjectName', class: ''}} %}
+
+                <h3>Nav demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/nav.html.twig', params: {id:'myNavId1', name:'myNavName1', type:'nav-tabs', classes: ['active', null, null], texts: ['Home', 'Profile', 'Messages'], links: ['#home', '#profile', '#messages']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/nav.html.twig', params: {id:'myNavId2', name:'myNavName2', type:'nav-tabs nav-justified', classes: ['active', null, null], texts: ['Home', 'Profile', 'Messages'], links: ['#home', '#profile', '#messages']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/nav.html.twig', params: {id:'myNavId3', name:'myNavName3', type:'nav-pills nav-justified', classes: ['active', null, null], texts: ['Home', 'Profile', 'Messages'], links: ['#home', '#profile', '#messages']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/nav.html.twig', params: {id:'myNavId4', name:'myNavName4', type:'nav-pills', classes: ['active', null, null], texts: ['Home', 'Profile', 'Messages'], links: ['#home', '#profile', '#messages']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/nav.html.twig', params: {id:'myNavId5', name:'myNavName5', type:'nav-tabs nav-stacked', classes: ['active', null, null], texts: ['Home', 'Profile', 'Messages'], links: ['#home', '#profile', '#messages']}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/nav.html.twig', params: {id:'myNavId6', name:'myNavName6', type:'nav-pills nav-stacked', classes: ['active', null, null], texts: ['Home', 'Profile', 'Messages'], links: ['#home', '#profile', '#messages']}} %}
+
+                <h3>Navbar demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/navbar.html.twig', params: {id:'myNavbarId', name:'myNavbarName', class: ''}} %}
+
+                <h3>Page Header demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/page-header.html.twig', params: {id:'myPageHeaderId2', name:'myPageHeaderName2', title: 'My header2', small: 'Small header info2'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/page-header.html.twig', params: {id:'myPageHeaderId2', name:'myPageHeaderName2', title: 'My header2', header: 'h4', small: 'Small header info2'}} %}
+
+                <h3>Pagination demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/pagination.html.twig', params: {id:'myPaginationId', name:'myPaginationName', class: ''}} %}
+
+                <h3>Panel demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/panel.html.twig', params: {id:'myPanelId1', name:'myPanelName1', class:'panel-default', header: 'h1', header_text: 'Title', body_text: 'Body', footer_text: 'Footer'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/panel.html.twig', params: {id:'myPanelId2', name:'myPanelName2', class:'panel-primary', header: 'h3', header_text: 'Title', body_text: 'Body', footer_text: 'Footer'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/panel.html.twig', params: {id:'myPanelId3', name:'myPanelName3', class:'panel-success', header: 'h3', header_text: 'Title', body_text: 'Body', footer_text: 'Footer'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/panel.html.twig', params: {id:'myPanelId4', name:'myPanelName4', class:'panel-info', header: 'h4', header_text: 'Title', body_text: 'Body', footer_text: 'Footer'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/panel.html.twig', params: {id:'myPanelId5', name:'myPanelName5', class:'panel-warning', header: 'h5', header_text: 'Title', body_text: 'Body', footer_text: 'Footer'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/panel.html.twig', params: {id:'myPanelId6', name:'myPanelName6', class:'panel-danger', header_text: 'Title', body_text: 'Body', footer_text: 'Footer'}} %}
+
+                <h3>Progressbar demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/progressbar.html.twig', params: {id: 'myProgressBarId1', name: 'myProgressBarName1', class: 'progress-bar-success progress-bar-striped active', percentage: '25', text: 'Completed'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/progressbar.html.twig', params: {id: 'myProgressBarId2', name: 'myProgressBarName2', class: 'progress-bar-info progress-bar-striped active', percentage: '30', text: 'Completed'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/progressbar.html.twig', params: {id: 'myProgressBarId3', name: 'myProgressBarName3', class: 'progress-bar-warning progress-bar-striped active', percentage: '35', text: 'Completed'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/progressbar.html.twig', params: {id: 'myProgressBarId4', name: 'myProgressBarName4', class: 'progress-bar-danger progress-bar-striped active', percentage: '40', text: 'Completed'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/progressbar.html.twig', params: {id: 'myProgressBarId5', name: 'myProgressBarName5', class: 'progress-bar-danger progress-bar-striped', percentage: '45', text: 'Completed'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/progressbar.html.twig', params: {id: 'myProgressBarId6', name: 'myProgressBarName6', class: 'progress-bar-danger', percentage: '50', text: 'Completed'}} %}
+
+                <h3>Radio demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/radio.html.twig', params: {id:'myRadioId1', name:'myRadioName1', text: 'Esto es un placeholder', type: 'input'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/radio.html.twig', params: {id:'myRadioId2', name:'myRadioName2', text: 'Acepto', type: 'label'}} %}
+
+                <h3>Responsive embed demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/responsive-embed.html.twig', params: {id:'myResponsiveEmbedId1', name:'myResponsiveEmbedName1', class: 'embed-responsive-16by9', src: '//www.youtube.com/embed/zpOULjyy-n8?rel=0'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/responsive-embed.html.twig', params: {id:'myResponsiveEmbedId2', name:'myResponsiveEmbedName2', class: 'embed-responsive-4by3', src: '//www.youtube.com/embed/zpOULjyy-n8?rel=0'}} %}
+
+                <h3>Select demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/select.html.twig', params: {id:'mySelectId1', name:'mySelectName1', class: 'input-sm', multiple: true, texts: ['Valor 1', 'Valor 2', 'Valor 3', 'Valor 4'], values: [1,2,3,4]}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/select.html.twig', params: {id:'mySelectId2', name:'mySelectName2', class: 'input-lg', multiple: true, texts: ['Valor 1', 'Valor 2', 'Valor 3', 'Valor 4'], values: [1,2,3,4]}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/select.html.twig', params: {id:'mySelectId3', name:'mySelectName3', class: 'input-sm', multiple: false, texts: ['Valor 1', 'Valor 2', 'Valor 3', 'Valor 4'], values: [1,2,3,4]}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/select.html.twig', params: {id:'mySelectId4', name:'mySelectName4', class: 'input-lg', multiple: false, texts: ['Valor 1', 'Valor 2', 'Valor 3', 'Valor 4'], values: [1,2,3,4]}} %}
+
+                <h3>Table demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/table.html.twig', params: {id:'myTableId', name:'myTableName', class: ''}} %}
+
+                <h3>Textarea demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/textarea.html.twig', params: {id:'myTextareaId1', name:'myTextareaName1', rows:'3', text: 'My sample text'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/textarea.html.twig', params: {id:'myTextareaId2', name:'myTextareaName2', rows:'3'}} %}
+
+                <h3>Thumbnail demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/thumbnail.html.twig', params: {id:'myThumbnailId1', name:'myThumbnailName1', class: 'img-responsive', message: 'Responsive image', link: '#1', path: '//designshack.net/wp-content/uploads/16-9.jpg'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/thumbnail.html.twig', params: {id:'myThumbnailId2', name:'myThumbnailName2', class: 'img-responsive img-rounded', message: 'Responsive image', link: '#2', path: '//arewethereyetblog.net/wp-content/uploads/2014/08/4-3-dummy-image7-1024x768.jpg'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/thumbnail.html.twig', params: {id:'myThumbnailId3', name:'myThumbnailName3', class: 'img-responsive img-circle', message: 'Responsive image', link: '#3', path: '//designshack.net/wp-content/uploads/16-9.jpg'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/thumbnail.html.twig', params: {id:'myThumbnailId4', name:'myThumbnailName4', class: 'img-responsive img-thumbnail', message: 'Responsive image', link: '#4', path: '//arewethereyetblog.net/wp-content/uploads/2014/08/4-3-dummy-image7-1024x768.jpg'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/thumbnail.html.twig', params: {id:'myThumbnailId5', name:'myThumbnailName5', class: 'img-responsive', message: 'Responsive image', link: null, path: '//designshack.net/wp-content/uploads/16-9.jpg'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/thumbnail.html.twig', params: {id:'myThumbnailId6', name:'myThumbnailName6', class: 'img-rounded', message: 'Responsive image', link: null, path: '//arewethereyetblog.net/wp-content/uploads/2014/08/4-3-dummy-image7-1024x768.jpg'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/thumbnail.html.twig', params: {id:'myThumbnailId7', name:'myThumbnailName7', class: 'img-circle', message: 'Responsive image', link: null, path: '//designshack.net/wp-content/uploads/16-9.jpg'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/thumbnail.html.twig', params: {id:'myThumbnailId8', name:'myThumbnailName8', class: 'img-thumbnail', message: 'Responsive image', link: null, path: '//arewethereyetblog.net/wp-content/uploads/2014/08/4-3-dummy-image7-1024x768.jpg'}} %}
+
+                <h3>Well demo:</h3>
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/well.html.twig', params: {id:'myWellId1', name:'myWellName1', class: 'well-lg', message: '<strong>Hello World</strong> Testing templating BS components with Twig!'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/well.html.twig', params: {id:'myWellId2', name:'myWellName2', class: 'well', message: '<strong>Hello World</strong> Testing templating BS components with Twig!'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/well.html.twig', params: {id:'myWellId2', name:'myWellName2', class: 'well-sm', message: '<strong>Hello World</strong> Testing templating BS components with Twig!'}} %}
+                {% include 'code-sample-bs3.html.twig' with {file: 'Components/BS3/well.html.twig', params: {id:'myWellId2', name:'myWellName2', class: 'well-xs', message: '<strong>Hello World</strong> Testing templating BS components with Twig!'}} %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

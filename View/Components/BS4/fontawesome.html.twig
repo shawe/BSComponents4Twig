@@ -1,0 +1,18 @@
+{#
+/**
+* @file fontawesome.html.twig
+*
+* Default theme implementation to display a FontAwesome component.
+*
+* @var id:          Your id
+* @var name:        Your name
+* @var class:       btn-default, btn-success, btn-info, btn-warning, btn-danger or button sizes
+*
+* How to use it:
+*   <a>
+*       {% include "Components/BS4/fontawesome.html.twig" with {id:'myFontAwesomeId', name:'myFontAwesomeName', class: 'fa fa-asterisk'} %}
+*/
+#}
+
+<i{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
+        class="fa{% if class is defined %} {{ class }}{% endif %}" aria-hidden="true"></i>

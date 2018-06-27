@@ -1,0 +1,47 @@
+{#
+/**
+* @file code-sample.html.twig
+*
+* Default theme implementation to display a code sample and the result
+*
+* @var code: Your code sample
+*
+* How to use it:
+*
+* {% include "code-sample.html.twig" with {code:'Here the code sample!'} %}
+*/
+#}
+
+{% if file is defined and params is defined %}
+    {% set string = '{% include' ~ ' "' ~ file ~ '" with {'%}
+    {% set sep = '' %}
+    {% set withVars = '' %}
+    {% for key,value in params %}
+        {% if value is iterable %}
+            {% set sep2 = '' %}
+            {% set withVars = withVars ~ sep ~ key ~ ": [" %}
+            {% for key2 in value %}
+                {% set withVars = withVars ~ sep2 ~ "'" ~ key2 ~ "'" %}
+                {% set sep2 = ', ' %}
+            {% endfor %}
+            {% set withVars = withVars ~ "]" %}
+        {% else %}
+            {% set withVars = withVars ~ sep ~ key ~ ": '" ~ value ~ "'" %}
+            {% set sep = ', ' %}
+        {% endif %}
+    {% endfor %}
+    {% set string = string ~ withVars ~ '}' %}
+
+    <div class="col-12">
+        <div class="row">
+            <div class="bd-example">
+                {% include file with params %}
+            </div>
+            <div class="highlight">
+                <pre><code class="language-html" data-lang="html">{{ string }}</code></pre>
+            </div>
+        </div>
+    </div>
+{% else %}
+    Not valid data
+{% endif %}
