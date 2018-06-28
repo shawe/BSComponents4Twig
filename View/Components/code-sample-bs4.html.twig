@@ -15,24 +15,7 @@
 {% import _self as gen %}
 
 {% if file is defined and params is defined %}
-    {% set string = '{% include' ~ ' "' ~ file ~ '" with {'%}
-    {% set sep = '' %}
-    {% set withVars = '' %}
-    {% for key,value in params %}
-        {% if value is iterable %}
-            {% set sep2 = '' %}
-            {% set withVars = withVars ~ sep ~ key ~ ": [" %}
-            {% for key2 in value %}
-                {% set withVars = withVars ~ sep2 ~ "'" ~ key2 ~ "'" %}
-                {% set sep2 = ', ' %}
-            {% endfor %}
-            {% set withVars = withVars ~ "]" %}
-        {% else %}
-            {% set withVars = withVars ~ sep ~ key ~ ": '" ~ value ~ "'" %}
-            {% set sep = ', ' %}
-        {% endif %}
-    {% endfor %}
-    {% set string = string ~ withVars ~ '} %}' %}
+    {% set string = '{% include' ~ ' "' ~ file ~ '" with ' ~ params|json_encode ~ ' %}' %}
 
     <div class="bd-example">
         {% include file with params %}
@@ -43,14 +26,3 @@
 {% else %}
     Not valid data
 {% endif %}
-
-{% macro generateArray(params) %}
-    {% for key,value in params %}
-        {% if value is iterable %}
-            generateArray(value)
-        {% else %}
-            {% set withVars = withVars ~ sep ~ key ~ ": '" ~ value ~ "'" %}
-            {% set sep = ', ' %}
-        {% endif %}
-    {% endfor %}
-{% endmacro %}
