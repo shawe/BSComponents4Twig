@@ -7,7 +7,7 @@
 * @var id:          Your id
 * @var name:        Your name
 * @var class:       Your class
-* @var position:    left, right
+* @var position:    prepend, append
 * @var texts:       Your texts, in order for respective input-group
 *
 * How to use it:
@@ -17,21 +17,19 @@
 #}
 
 <div class="input-group{% if class is defined %} {{ class }}{% endif %}">
-    {% if position is defined and position == 'left' %}
-        <span class="input-group-btn">
+    {% if position is defined and position == 'prepend' %}
+        <div class="input-group-prepend">
             <button{% if id is defined %} id="button_{{ id }}"{% endif %}{% if name is defined %} name="button_{{ name }}"{% endif %}
                     class="btn btn-default" type="button">
-                {% if texts[0] is defined %}{{ texts[0] | raw }}{% endif %}
+                {% if texts[1] is defined %}{{ texts[1] | raw }}{% endif %}
             </button>
-        </span>
+        </div>
         <input{% if id is defined %} id="input_{{ id }}"{% endif %}{% if name is defined %} name="input_{{ name }}"{% endif %}
-                type="text"
-                class="form-control"{% if texts[1] is defined %} placeholder="{{ texts[1] | raw }}"{% endif %}>
-    {% elseif position is defined and position == 'right' %}
+            type="text" class="form-control" {% if texts[0] is defined %}placeholder="{{ texts[0] | raw }}"{% endif %}>
+    {% elseif position is defined and position == 'append' %}
         <input{% if id is defined %} id="input_{{ id }}"{% endif %}{% if name is defined %} name="input_{{ name }}"{% endif %}
-                type="text"
-                class="form-control" {% if texts[0] is defined %}placeholder="{{ texts[0] | raw }}"{% endif %}>
-        <span class="input-group-btn">
+            type="text" class="form-control" {% if texts[0] is defined %}placeholder="{{ texts[0] | raw }}"{% endif %}>
+        <div class="input-group-append">
             <button{% if id is defined %} id="button_{{ id }}"{% endif %}{% if name is defined %} name="button_{{ name }}"{% endif %}
                     class="btn btn-default" type="button">
                 {% if texts[1] is defined %}{{ texts[1] | raw }}{% endif %}

@@ -17,7 +17,7 @@
 #}
 
 <div{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-        class="alert{% if class is defined %} {{ class }}{% endif %}{% if dismissible is defined and dismissible==true %} alert-dismissible fade in{% endif %}"
+        class="alert{% if class is defined %} {{ class }}{% endif %}{% if dismissible is defined and dismissible==true %} alert-dismissible fade show{% endif %}"
         role="alert">
     {% if dismissible is defined and dismissible==true %}
         <button type="button" class="close" data-dismiss="alert" aria-label="{{ i18n.trans('close') }}">

@@ -17,19 +17,21 @@
 * {% include "Components/BS4/breadcrumb.html.twig" with {id:'myBreadcrumbId', name:'myBreadcrumbName', texts: texts, links: links, classes: classes, length: length} %}
 #}
 
-<ol{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-        class="breadcrumb">
-    {% for i in texts %}
-        <li{% if classes[loop.index0] is defined and classes[loop.index0]=='active' %} class="{{ classes[loop.index0] }}"{% endif %}>
-            {% if links[loop.index0] is defined and links[loop.index0]!=null %}
-            <a href="{{ links[loop.index0] }}">
-                {% endif %}
-                {% if texts[loop.index0] is defined %}
-                {{ texts[loop.index0] | raw }}
-                {% endif %}
+<nav aria-label="breadcrumb">
+    <ol{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
+            class="breadcrumb">
+        {% for i in texts %}
+            <li class="breadcrumb-item{% if classes[loop.index0] is defined %} {{ classes[loop.index0] }}"{% endif %}{% if loop.last %} aria-current="page"{% endif %}>
                 {% if links[loop.index0] is defined and links[loop.index0]!=null %}
-            </a>
-            {% endif %}
-        </li>
-    {% endfor %}
-</ol>
+                <a href="{{ links[loop.index0] }}">
+                    {% endif %}
+                    {% if texts[loop.index0] is defined %}
+                    {{ texts[loop.index0] | raw }}
+                    {% endif %}
+                    {% if links[loop.index0] is defined and links[loop.index0]!=null %}
+                </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+</nav>

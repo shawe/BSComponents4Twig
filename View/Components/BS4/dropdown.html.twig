@@ -29,25 +29,23 @@
         {{ text }}
         <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu{% if alignement is defined %} {{ alignement }}{% endif %}" aria-labelledby="{{ id }}">
+    <div class="dropdown-menu{% if alignement is defined %} {{ alignement }}{% endif %}" aria-labelledby="{{ id }}">
         {% for id in texts %}
             {% if classes[loop.index0] is defined and classes[loop.index0] == 'dropdown-header' %}
-                <li class="dropdown-header">
+                <h6 class="dropdown-header">
                     {% if texts[loop.index0] is defined %}{{ texts[loop.index0] | raw }}{% endif %}
-                </li>
+                </h6>
             {% elseif classes[loop.index0] is defined and classes[loop.index0] == 'divider' %}
-                <li role="separator" class="divider"></li>
+                <div class="dropdown-divider"></div>
             {% elseif classes[loop.index0] is defined and classes[loop.index0] == 'disabled' %}
-                <li class="disabled">
+                <a class="dropdown-item" class="disabled">
                     {% if texts[loop.index0] is defined %}{{ texts[loop.index0] | raw }}{% endif %}
-                </li>
+                </a>
             {% elseif classes[loop.index0] is defined and classes[loop.index0] == null %}
-                <li>
-                    <a{% if links[loop.index0] is defined %} href="{{ links[loop.index0] }}"{% endif %}>{% if texts[loop.index0] is defined %}{{ texts[loop.index0] | raw }}{% endif %}</a>
-                </li>
+                <a class="dropdown-item"{% if links[loop.index0] is defined %} href="{{ links[loop.index0] }}"{% endif %}>{% if texts[loop.index0] is defined %}{{ texts[loop.index0] | raw }}{% endif %}</a>
             {% else %}
                 Something is wrong with your code!
             {% endif %}
         {% endfor %}
-    </ul>
+    </div>
 </div>

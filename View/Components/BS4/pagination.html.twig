@@ -2,26 +2,31 @@
 /**
 * @file pagination.html.twig
 *
+* @var class:       Pagination class
+* @var links:       Array of links
+* @var texts:       Array of text
+* @var classes:     Array of classes
+* @var arrowsLink:  Array for previous and next links
+* @var arrowsClass: Array for previous and next class
+*
 * Default theme implementation to display a Bootstrap Pagination component.
 *
 */
 #}
 
 <nav>
-    <ul class="pagination">
-        <li>
-            <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
+    <ul class="pagination {% if class is defined %}{{ class }}{% endif %}">
+        <li class="page-item {{ arrowsClass[0] }}">
+            <a class="page-link" href="{{ arrowsLink[0] }}">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
             </a>
         </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li class="disabled"><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-            <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
+        {% for link in links %}
+            <li class="page-item {{ classes[loop.index0] }}"><a class="page-link" href="{{ link }}">{{ texts[loop.index0] }}</a></li>
+        {% endfor %}
+        <li class="page-item {{ arrowsClass[1] }}">
+            <a class="page-link" href="{{ arrowsLink[1] }}">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </a>
         </li>
     </ul>

@@ -7,7 +7,7 @@
 * @var id:          Your id
 * @var name:        Your name
 * @var class:       Your class
-* @var position:    left, right or both
+* @var position:    prepend, append or both
 * @var texts:       Your texts, in order for respective input-group
 *
 * How to use it:
@@ -18,43 +18,49 @@
 #}
 
 <div class="input-group{% if class is defined %} {{ class }}{% endif %}">
-    {% if position == 'left' %}
-        <span class="input-group-addon" id="addon_{{ id }}">
-            {% if texts[0] is defined %}
-                {{ texts[0] | raw }}
-            {% endif %}
-        </span>
+    {% if position == 'prepend' %}
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="addon_{{ id }}">
+                {% if texts[0] is defined %}
+                    {{ texts[0] | raw }}
+                {% endif %}
+            </span>
+        </div>
         <input{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-                type="text"
-                                                                                           class="form-control"
+                type="text" class="form-control"
                 {% if texts[1] is defined %} placeholder="{{ texts[1] | raw }}"{% endif %}
                 {% if id is defined %} aria-describedby="addon_{{ id }}"{% endif %}>
-    {% elseif position == 'right' %}
+    {% elseif position == 'append' %}
         <input{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
                 type="text"
                 class="form-control"
                 {% if texts[0] is defined %} placeholder="{{ texts[0] | raw }}"{% endif %}
                 {% if id is defined %} aria-describedby="addon_{{ id }}"{% endif %}>
-        <span class="input-group-addon" id="addon_{{ id }}">
-            {% if texts[1] is defined %}
-                {{ texts[1] | raw }}
-            {% endif %}
-        </span>
+        <div class="input-group-append">
+            <span class="input-group-text" id="addon_{{ id }}">
+                {% if texts[1] is defined %}
+                    {{ texts[1] | raw }}
+                {% endif %}
+            </span>
+        </div>
     {% elseif position == 'both' %}
-        <span class="input-group-addon">
-            {% if texts[0] is defined %}
-                {{ texts[0] | raw }}
-            {% endif %}
-        </span>
+        <div class="input-group-prepend">
+            <span class="input-group-text">
+                {% if texts[0] is defined %}
+                    {{ texts[0] | raw }}
+                {% endif %}
+            </span>
+        </div>
         <input{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-                type="text"
-                                                                                           class="form-control"
+                type="text" class="form-control"
                 {% if texts[1] is defined %} aria-label="{{ texts[1] | raw }}"{% endif %}>
-        <span class="input-group-addon">
-            {% if texts[2] is defined %}
-                {{ texts[2] | raw }}
-            {% endif %}
-        </span>
+        <div class="input-group-append">
+            <span class="input-group-text">
+                {% if texts[2] is defined %}
+                    {{ texts[2] | raw }}
+                {% endif %}
+            </span>
+        </div>
     {% else %}
         Something is wrong with your code!
     {% endif %}

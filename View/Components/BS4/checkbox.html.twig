@@ -2,33 +2,28 @@
 /**
 * @file checkbox.html.twig
 *
-* Default theme implementation to display a Bootstrap Checkbox component.
+* Default theme implementation to display a Bootstrap Radio component.
 *
 * @var id:          Your id
 * @var name:        Your name
-* @var text:        Button text
-* @var type:        input, label
+* @var disabled:    true/false
+* @var message:     Your text message
 *
 * How to use it:
+*
+* {% include "Components/BS4/checkbox.html.twig" with {id:'myRadioId', name:'myRadioName', message: '<strong>Hello World</strong> Testing templating BS components with Twig!'} %}
+* How to use it:
 *   <input>
-*       {% include "Components/BS4/checkbox.html.twig" with {id:'myCheckboxId1', name:'myCheckboxName1', text: 'Esto es un placeholder', type: 'input'} %}
+*       {% include "Components/BS4/checkbox.html.twig" with {id:'myRadioId1', name:'myRadioName1', text: 'Esto es un placeholder'} %}
 *   <label>
-*       {% include "Components/BS4/checkbox.html.twig" with {id:'myCheckboxId2', name:'myCheckboxName2', text: 'Acepto', type: 'label'} %}
+*       {% include "Components/BS4/checkbox.html.twig" with {id:'myRadioId2', name:'myRadioName2', text: 'Recuerdame'} %}
 */
 #}
-{% if type is defined and type == 'input' %}
-    <div class="input-group">
-          <span class="input-group-addon">
-            <input{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-                    type="checkbox"
-                    aria-label="...">
-          </span>
-        <input type="text" class="form-control" {% if text is defined %}placeholder="{{ text | raw }}"{% endif %}
-               aria-label="...">
-    </div>
-{% elseif type is defined and type == 'label' %}
-    <label>
-        <input{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-                type="checkbox"> {% if text is defined %}{{ text | raw }}{% endif %}
+
+<div class="form-check{% if disabled == true %} disabled{% endif %}">
+    <input class="form-check-input" type="checkbox" {% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
+            {% if value is defined %} value="{{ value }}"{% endif %}{% if checked == true %} checked{% endif %}{% if disabled == true %} disabled{% endif %}>
+    <label class="form-check-label" {% if id is defined %} for="{{ id }}"{% endif %}>
+        {{ text | raw }}
     </label>
-{% endif %}
+</div>

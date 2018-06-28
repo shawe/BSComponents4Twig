@@ -6,8 +6,13 @@
 *
 * @var id:          Your id
 * @var name:        Your name
-* @var type:        container or null
+* @var type:        container or null for free content using text
 * @var text:        Your text
+* @var title:       Your title, if type was set to null
+* @var subtitle:    Your subtitle, if type was set to null
+* @var separator:   Your separator, if type was set to null
+* @var text:        Your text, if type was set to null
+* @var buttons:     Your buttons, if type was set to null
 *
 * How to use it:
 *   <a>
@@ -16,15 +21,18 @@
 */
 #}
 
-<div{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-        class="jumbotron">
+<div{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %} class="jumbotron{% if name is defined %} {{ class }}{% endif %}">
     {% if type is defined and type == 'container' %}
-    <div class="container">
-        {% endif %}
-        {% if text is defined %}
-        {{ text | raw }}
-        {% endif %}
-        {% if type is defined and type == 'container' %}
-    </div>
+        <div class="container">
+            {% if text is defined %}
+            {{ text | raw }}
+            {% endif %}
+        </div>
+    {% else %}
+        {% if title is defined %}<h1 class="display-4">{{ title|raw }}</h1>{% endif %}
+        {% if subtitle is defined %}<p class="lead">{{ subtitle|raw }}</p>{% endif %}
+        {% if separator is defined %}<hr class="my-4">{% endif %}
+        {% if text is defined %}<p>{{ text|raw }}</p>{% endif %}
+        {% if buttons is defined %}{{ buttons|raw }}{% endif %}
     {% endif %}
 </div>

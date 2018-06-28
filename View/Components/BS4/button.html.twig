@@ -10,7 +10,9 @@
 * @var text:        Button text
 * @var style:       link, button, input
 * @var type:        submit, button, null
-* @var type:        link
+* @var link:        link
+* @var disabled:    disable
+* @var pressed:     pressed
 *
 * How to use it:
 *   <a>
@@ -24,8 +26,9 @@
 
 {% if style is defined and style == 'link' %}
     <a{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-            class="btn{% if class is defined %} {{ class }}{% endif %}"
-            {% if link is defined %} href="{{ link }}"{% endif %} role="button">
+            class="btn{% if class is defined %} {{ class }}{% endif %}{% if disabled is defined %} disabled{% endif %}"
+            {% if link is defined %} href="{{ link }}"{% endif %} role="button"
+            {% if pressed is defined %} aria-pressed="true"{% endif %}>
         {% if text is defined %}
             {{ text | raw }}
         {% endif %}
@@ -33,7 +36,9 @@
 {% elseif style is defined and style == 'button' %}
     <button{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
             class="btn{% if class is defined %} {{ class }}{% endif %}"
-            {% if type is defined %} type="{{ type }}"{% endif %}>
+            {% if type is defined %} type="{{ type }}"{% endif %}
+            {% if pressed is defined %} aria-pressed="true"{% endif %}
+            {% if disabled is defined %} disabled{% endif %}>
         {% if text is defined %}
             {{ text | raw }}
         {% endif %}
@@ -42,7 +47,9 @@
     <input{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
             class="btn{% if class is defined %} {{ class }}{% endif %}"
             {% if type is defined %} type="{{ type }}"{% endif %}
-            {% if text is defined %}value="{{ text | raw }}"{% endif %}>
+            {% if text is defined %}value="{{ text | raw }}"{% endif %}
+            {% if pressed is defined %} aria-pressed="true"{% endif %}
+            {% if disabled is defined %} disabled{% endif %}>
 {% else %}
     Something is wrong with your code!
 {% endif %}

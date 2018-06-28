@@ -6,6 +6,7 @@
 *
 * @var id:          Your id
 * @var name:        Your name
+* @var class:       Your main class
 * @var texts:       Array of texts
 * @var links:       Array of links, link or null
 * @var classes:     Array of classes, list-group-item-sucess, list-group-item-info, list-group-item-warning, list-group-item-danter or null
@@ -20,7 +21,7 @@
 #}
 
 <ul{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-        class="list-group">
+        class="list-group{% if class is defined %} {{ class }}"{% endif %}">
     {% for i in texts %}
         {% if type is defined and type == 'list' %}
             <li{% if id is defined %} id="{{ id }}_item_{{ loop.index0 }}"{% endif %}{% if name is defined %} name="{{ name }}_item_{{ loop.index0 }}"{% endif %}

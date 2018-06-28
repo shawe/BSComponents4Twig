@@ -1,0 +1,44 @@
+{#
+/**
+* @file page-header.html.twig
+*
+* Default theme implementation to display a Bootstrap Page Header component.
+*
+* @var id:          Your id
+* @var name:        Your name
+* @var title:       Your title
+* @var header:      h1, h2, h3, ...
+* @var small:       Your small title
+*
+* How to use it:
+*
+*   {% include "Components/anchor-bs4.html.twig" with {id:'myPageHeaderId1', name:'myPageHeaderName1', title: 'My header1', header: '', small: 'Small header info1'} %}
+*   {% include "Components/anchor-bs4.html.twig" with {id:'myPageHeaderId2', name:'myPageHeaderName2', title: 'My header2', small: 'Small header info2'} %}
+*/
+#}
+
+{% set openHead = '<h1' %}
+{% set closeHead = '</h1>' %}
+{% if header is defined and header != '' %}
+    {% set openHead = '<' ~ header %}
+    {% set closeHead = '</' ~ header ~ '>' %}
+{% endif %}
+
+{% if id is defined %}
+    {% set openHead = openHead ~ ' id="' ~ id ~ '"' %}
+{% endif %}
+{% if name is defined %}
+    {% set openHead = openHead ~ ' name="' ~ name ~ '"' %}
+{% endif %}
+
+{% set openHead = openHead ~ '>' %}
+
+{{ openHead|raw }}
+    {% if title is defined and title != '' %}
+        {{ title | raw }}
+    {% endif %}
+{{ closeHead|raw }}
+
+{% if small is defined and small != '' %}
+    {{ small | raw }}
+{% endif %}

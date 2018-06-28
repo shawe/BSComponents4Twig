@@ -20,19 +20,21 @@
 <div{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
         class="page-header">
     {% if header is defined and header != '' %}
-    <{{ header }}>
-{% else %}
-    <h1>
-        {% endif %}
-        {% if title is defined and title != '' %}
-            {{ title | raw }}
-        {% endif %}
-        {% if small is defined and small != '' %}
-            <small>{{ small | raw }}</small>
-        {% endif %}
-        {% if header is defined and header != '' %}
-    </{{ header }}>
-{% else %}
-    </h1>
+        <{{ header }}>
+    {% else %}
+        <h1>
+    {% endif %}
+
+    {% if title is defined and title != '' %}
+        {{ title | raw }}
+    {% endif %}
+    {% if small is defined and small != '' %}
+        <small>{{ small | raw }}</small>
+    {% endif %}
+
+    {% if header is defined and header != '' %}
+        </{{ header }}>
+    {% else %}
+        </h1>
     {% endif %}
 </div>

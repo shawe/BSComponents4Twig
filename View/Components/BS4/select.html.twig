@@ -18,7 +18,7 @@
 #}
 
 <select{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}{% if multiple is defined and multiple==true %} multiple{% endif %}
-        class="form-control{% if class is defined %} {{ class }}{% endif %}">
+        class="custom-select{% if class is defined %} {{ class }}{% endif %}">
     {% for i in texts %}
         <option{% if values[loop.index0] is defined %} value="{{ values[loop.index0] }}"{% endif %}>{% if texts[loop.index0] is defined %}{{ texts[loop.index0] }}{% endif %}</option>
     {% endfor %}

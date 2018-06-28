@@ -6,6 +6,7 @@
 *
 * @var id:          Your id
 * @var name:        Your name
+* @var style:       Your style
 * @var class:       progress-bar-success, progress-bar-info, progress-bar-warning, progress-bar-danger, progress-bar-striped, active
 * @var percentage:  Your percentage value
 * @var text:        Your text
@@ -16,10 +17,9 @@
 */
 #}
 
-<div{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}
-        class="progress">
+<div class="progress"{% if id is defined %} id="{{ id }}"{% endif %}{% if name is defined %} name="{{ name }}"{% endif %}{% if name is defined %} style="{{ style }}"{% endif %}>
     <div class="progress-bar{% if class is defined %} {{ class }}{% endif %}"
-         role="progressbar"{% if percentage is defined %} aria-valuenow="{{ percentage }}"{% endif %} aria-valuemin="0"
+         role="progressbar"{% if percentage is defined %} style="width: {{ percentage }}%" aria-valuenow="{{ percentage }}"{% endif %} aria-valuemin="0"
          aria-valuemax="100"
             {% if percentage is defined %} style="width: {{ percentage }}%;"{% endif %}>
         {% if text is defined and text != '' %}

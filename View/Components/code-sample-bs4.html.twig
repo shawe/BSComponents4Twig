@@ -12,6 +12,8 @@
 */
 #}
 
+{% import _self as gen %}
+
 {% if file is defined and params is defined %}
     {% set string = '{% include' ~ ' "' ~ file ~ '" with {'%}
     {% set sep = '' %}
@@ -30,18 +32,25 @@
             {% set sep = ', ' %}
         {% endif %}
     {% endfor %}
-    {% set string = string ~ withVars ~ '}' %}
+    {% set string = string ~ withVars ~ '} %}' %}
 
-    <div class="col-12">
-        <div class="row">
-            <div class="bd-example">
-                {% include file with params %}
-            </div>
-            <div class="highlight">
-                <pre><code class="language-html" data-lang="html">{{ string }}</code></pre>
-            </div>
-        </div>
+    <div class="bd-example">
+        {% include file with params %}
+    </div>
+    <div class="highlight">
+        <pre><code class="language-html" data-lang="html">{{ string }}</code></pre>
     </div>
 {% else %}
     Not valid data
 {% endif %}
+
+{% macro generateArray(params) %}
+    {% for key,value in params %}
+        {% if value is iterable %}
+            generateArray(value)
+        {% else %}
+            {% set withVars = withVars ~ sep ~ key ~ ": '" ~ value ~ "'" %}
+            {% set sep = ', ' %}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
