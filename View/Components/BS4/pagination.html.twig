@@ -18,7 +18,7 @@
     <ul class="pagination {% if class is defined %}{{ class }}{% endif %}">
         <li class="page-item {{ arrowsClass[0] }}">
             <a class="page-link" href="{{ arrowsLink[0] }}">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
             </a>
         </li>
         {% for link in links %}
@@ -26,7 +26,7 @@
         {% endfor %}
         <li class="page-item {{ arrowsClass[1] }}">
             <a class="page-link" href="{{ arrowsLink[1] }}">
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
